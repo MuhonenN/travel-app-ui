@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
         height: '100%',
     },
     title: {
-        marginTop: 24, //
         color: 'white',
         fontSize: 40,
         fontWeight: 'bold',
@@ -16,7 +15,7 @@ export const styles = StyleSheet.create({
     textView: {
         postion: 'absolute',
         left: width / 10,
-        bottom: height / 40,
+        top: height / 40,
     },
     description: {
         color: 'white',

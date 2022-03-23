@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, SafeAreaView, Text, Image, Dimensions } from 'react-native';
+import { View, Text, Image, Dimensions } from 'react-native';
 import { styles } from '../styles/styles';
 import Input from '../components/Input';
 import ImageButton from '../components/ImageButton';
@@ -21,7 +21,16 @@ export default class MainScreen extends Component {
             toValue: 200,
             duration: 700,
             easing: Easing.back(),
+            useNativeDriver: true,
         }).start();
+    };
+
+    toCategory = (image, title, slogan) => {
+        this.props.navigation.navigate('Luxury', {
+            image,
+            title,
+            slogan,
+        });
     };
 
     render() {
@@ -62,7 +71,11 @@ export default class MainScreen extends Component {
                             />
                             <ImageButton
                                 onPress={() =>
-                                    this.props.navigation.navigate('Luxury')
+                                    this.toCategory(
+                                        require('../assets/images/1.jpg'),
+                                        'Luxury',
+                                        'Stunning Places'
+                                    )
                                 }
                                 title="Luxury"
                                 description="Stunning Places"
@@ -74,6 +87,13 @@ export default class MainScreen extends Component {
                                 style={styles.image}
                             />
                             <ImageButton
+                                onPress={() =>
+                                    this.toCategory(
+                                        require('../assets/images/2.jpg'),
+                                        'City',
+                                        'Fascinating Culture'
+                                    )
+                                }
                                 title="City"
                                 description="Fascinating Culture"
                             />
@@ -86,8 +106,15 @@ export default class MainScreen extends Component {
                                 style={styles.image}
                             />
                             <ImageButton
+                                onPress={() =>
+                                    this.toCategory(
+                                        require('../assets/images/3.jpg'),
+                                        'Seaside',
+                                        "Fish n' chips"
+                                    )
+                                }
                                 title="Seaside"
-                                description="Fish n' chips and beer"
+                                description="Fish n' chips"
                             />
                         </View>
                         <View style={styles.imageView}>
@@ -96,6 +123,13 @@ export default class MainScreen extends Component {
                                 style={styles.image}
                             />
                             <ImageButton
+                                onPress={() =>
+                                    this.toCategory(
+                                        require('../assets/images/4.jpg'),
+                                        'Wonders',
+                                        'Visit World Wonders'
+                                    )
+                                }
                                 title="Wonders"
                                 description="Visit World Wonders"
                             />

@@ -4,9 +4,11 @@ import { styles } from '../styles/styles';
 
 export default function ImageButton({ title, description, onPress }) {
     return (
-        <TouchableOpacity onPress={onPress} style={styles.imageButton}>
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.description}>{description}</Text>
-        </TouchableOpacity>
+        <>
+            <TouchableOpacity onPress={onPress} style={styles.imageButton}>
+                <Text style={styles.title}>{title}</Text>
+                <Text style={styles.description}>{description}</Text>
+            </TouchableOpacity>
+        </>
     );
 }

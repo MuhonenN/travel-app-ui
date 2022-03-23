@@ -1,12 +1,12 @@
-import { Text, View, Image } from 'react-native';
 import React from 'react';
 import { styles } from '../styles/styles';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Text, View, Image } from 'react-native';
 
 export default function Card({ title, description, location, image, onPress }) {
     return (
         <>
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity onPress={onPress} style={styles.card}>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={styles.cardImage}>
                         <Image
